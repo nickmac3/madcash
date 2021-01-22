@@ -26,16 +26,19 @@ namespace parameters {
 const uint64_t CRYPTONOTE_MAX_BLOCK_NUMBER                   = 500000000;
 const size_t   CRYPTONOTE_MAX_BLOCK_BLOB_SIZE                = 500000000;
 const size_t   CRYPTONOTE_MAX_TX_SIZE                        = 1000000000;
-const uint64_t CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX       = 0xDB; // addresses start with "0xDB"
+const uint64_t CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX       = 0x314399db3135c; // addresses start with "0x314399db3135c"
 const size_t   CRYPTONOTE_MINED_MONEY_UNLOCK_WINDOW          = 6;
 const uint64_t CRYPTONOTE_BLOCK_FUTURE_TIME_LIMIT            = 60 * 60 * 2;
 
 const size_t   BLOCKCHAIN_TIMESTAMP_CHECK_WINDOW             = 30;
 
 // MONEY_SUPPLY - total number coins to be generated
-const uint64_t MONEY_SUPPLY                                  = UINT64_C(858986905600000000);
+const uint64_t MONEY_SUPPLY                                  = UINT64_C(3141592653500000000);
+const unsigned EMISSION_SPEED_FACTOR                         = 19;
+const uint64_t GENESIS_BLOCK_REWARD                          = UINT64_C(314159265300000000);
+static_assert(EMISSION_SPEED_FACTOR <= 8 * sizeof(uint64_t), "Bad EMISSION_SPEED_FACTOR");
 
-const char     GENESIS_COINBASE_HEX[]                        = "010601ff0001808088a5a9a307029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd088071210138dc57b313e2560fa75f5d7c9a6398800855220aefb3603bc70826adc83e0cc1";
+const char     GENESIS_COINBASE_HEX[]                        = "";
 const uint32_t GENESIS_NONCE                                 = 420;
 
 const size_t   CRYPTONOTE_REWARD_BLOCKS_WINDOW               = 100;
@@ -72,12 +75,11 @@ const char     CRYPTONOTE_POOLDATA_FILENAME[]                = "poolstate.bin";
 const char     P2P_NET_DATA_FILENAME[]                       = "p2pstate.bin";
 const char     MINER_CONFIG_FILE_NAME[]                      = "miner_conf.json";
 } // parameters
-
 const uint64_t START_BLOCK_REWARD                            = (UINT64_C(320000) * parameters::COIN);
 const uint64_t MIN_BLOCK_REWARD                              = (UINT64_C(150) * parameters::COIN);
 const uint64_t REWARD_HALVING_INTERVAL                       = (UINT64_C(11000));
 
-const char     CRYPTONOTE_NAME[]                             = "ducknote";
+const char     CRYPTONOTE_NAME[]                             = "MarchMadCash";
 
 const uint8_t  CURRENT_TRANSACTION_VERSION                   =  1;
 const uint8_t  BLOCK_MAJOR_VERSION_1                         =  1;
@@ -90,8 +92,8 @@ const size_t   BLOCKS_IDS_SYNCHRONIZING_DEFAULT_COUNT        =  10000;  //by def
 const size_t   BLOCKS_SYNCHRONIZING_DEFAULT_COUNT            =  200;    //by default, blocks count in blocks downloading
 const size_t   COMMAND_RPC_GET_BLOCKS_FAST_MAX_COUNT         =  1000;
 
-const int      P2P_DEFAULT_PORT                              =  42080;
-const int      RPC_DEFAULT_PORT                              =  42081;
+const int      P2P_DEFAULT_PORT                              =  31415;
+const int      RPC_DEFAULT_PORT                              =  31499;
 
 const size_t   P2P_LOCAL_WHITE_PEERLIST_LIMIT                =  1000;
 const size_t   P2P_LOCAL_GRAY_PEERLIST_LIMIT                 =  5000;
@@ -107,7 +109,7 @@ const size_t   P2P_DEFAULT_HANDSHAKE_INVOKE_TIMEOUT          = 5000;          //
 const char     P2P_STAT_TRUSTED_PUB_KEY[]                    = "85ae8734f90bc1ee295ceb0ec05a49852d4dbbc9d1c27a619b5f4bdf26a0196e";
 const size_t   P2P_DEFAULT_WHITELIST_CONNECTIONS_PERCENT     = 70;
 
-const boost::uuids::uuid NETWORK_ID                          = { { 0x4E, 0x6F, 0x73, 0x63, 0x65, 0x20, 0x74, 0x65, 0x20, 0x69, 0x70, 0x73, 0x75, 0x6D, 0x20, 0x20} };
+const boost::uuids::uuid NETWORK_ID                          = { { 0x31, 0x41, 0x59, 0x26, 0x53, 0x58, 0x97, 0x93, 0x23, 0x84, 0x62, 0x64, 0x33, 0x83, 0x27, 0x95} };
 
 const unsigned THREAD_STACK_SIZE                             = 5 * 1024 * 1024;
 
